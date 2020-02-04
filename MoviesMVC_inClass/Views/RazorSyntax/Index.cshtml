@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Razor Syntax</title>
+</head>
+<body style="background-color: black; color: red">
+    <div>
+        @{
+
+            int sayi = 17;
+            string ad = "Çağıl";
+
+        }
+        <span>@ad</span>
+        <br />
+        @{
+            string htmlText = "<b><i>Hüseyin</i></b>";
+            var a = Html.Raw("<b><i>Hüseyin</i></b>");
+            List<int> sayilar = new List<int>() { 1, 2, 3, 4, 5 };
+        }
+        <span>@Html.Raw(htmlText)</span>
+        <br />
+        <span>@a</span>
+        <br />
+        @foreach (var s in sayilar)
+        {
+            <span>@s</span>
+            <br />
+        }
+        @MoviesMVC_inClass.Controllers.Demos.NameUtil.GetName()
+        <br />
+        @{
+            Func<dynamic, object> boldDelegate = @<b>@item</b>;
+
+
+        }
+        @boldDelegate("Murat CEYHAN")
+        
+        <br/>
+        
+
+    </div>
+</body>
+</html>
